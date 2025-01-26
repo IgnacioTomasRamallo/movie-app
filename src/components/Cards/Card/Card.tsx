@@ -1,24 +1,31 @@
-import { Movie } from "../Cards"
+import React from "react";
+import { Movie } from "../Cards";
 
-type CardProps = Pick<Movie, "backdrop_path" | "original_name" |"original_title">
+type CardProps = Pick<Movie, "backdrop_path" | "original_language" | "title">;
 
 //omit parshel
 
-
-const Card: React.FC<CardProps> = ({backdrop_path, original_title,original_name}) => {
+const Card: React.FC<CardProps> = ({
+  backdrop_path,
+  title,
+  original_language,
+}) => {
   return (
-    <div>
-
+    <div className="border-2 flex flex-col p-5 ">
       <div>
-        <img src={`https://image.tmdb.org/t/p/w500${backdrop_path}`} alt="" />
+        <img
+          src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
+          alt=""
+          className=""
+        />
       </div>
 
       <div>
-        <h2>{original_title}</h2>
-        <h2>{original_name}</h2>
+        <h2>{`Titulo: ${title}`}</h2>
+        <h2>{`Lenguaje: ${original_language}`}</h2>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
