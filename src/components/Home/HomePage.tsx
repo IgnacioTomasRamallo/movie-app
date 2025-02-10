@@ -3,14 +3,18 @@ import Login from "../Login/Login";
 import Navbar from "./Navbar/Navbar";
 const HomePage = () => {
   return (
-    <div className="flex w-full h-[100vh] flex-col">
+    <div className="relative w-full h-screen">
       <img
         src={imageBG}
         alt="fondo"
-        className="absolute w-full h-full object-cover brightness-50 bg-cover z-[-1]"
+        className="absolute top-0 left-0 w-full h-full object-cover brightness-[0.3] z-[-1]"
       />
-      <Navbar />
-      <Login />
+      <div className="fixed top-0 left-0 w-full z-10">
+        <Navbar />
+      </div>
+      <div className="flex items-center justify-center h-full">
+        <Login />
+      </div>
     </div>
   );
 };
